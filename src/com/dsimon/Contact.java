@@ -17,6 +17,10 @@ public class Contact {
         return this.phoneNumber;
     }
 
+    public static Contact createContact(String name, String phoneNumber) {
+        return new Contact(name, phoneNumber);
+    }
+
     public void updateContact(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
