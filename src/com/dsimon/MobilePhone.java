@@ -49,7 +49,12 @@ public class MobilePhone {
             String newName = scanner.nextLine();
             System.out.println("Enter their new phone number:");
             String newNumber = scanner.nextLine();
-            contacts.get(contactIndex).updateContact(newName, newNumber);
+            int newContactIndex = findContact(newName);
+            if (newContactIndex == -1) {
+                contacts.get(contactIndex).updateContact(newName, newNumber);
+            } else {
+                System.out.println("Duplicate name for an existing contact");
+            }
         }
     }
 
